@@ -4,6 +4,11 @@ import pytz
 from datetime import datetime
 import uuid
 
+# Unsafe use of eval()
+user_input = input("Enter a math expression: ")
+result = eval(user_input)  # An attacker can input malicious system commands or code
+print("Result:", result)
+
 # Set your AWS credentials and region for DynamoDB
 region_name = 'us-east-1'
 ist = pytz.timezone('Asia/kolkata') # Indian Standard Time
